@@ -18,6 +18,11 @@ class BaseModel
             DBPASS
         );
     }
+
+    public function setQuery($sql) {
+        $this->sql = $sql;
+    }
+    
 // neu ko truyen gi thi se dung cho cau lenh select
 // neu truyen false thi danh cho cau lenh them sua
     public function getData($query, $getAll = true)
@@ -31,9 +36,6 @@ class BaseModel
         }
 
         return $stmt->fetch();
-    }
-    public function setQuery($sql) {
-        $this->sql = $sql;
     }
 
     //Function execute the query
